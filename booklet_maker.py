@@ -62,6 +62,15 @@ def add_double_page(writer, page_size, print_page):
         p.mergeTranslatedPage(r_page, width / 2, 0)
 
 
+def print_instructions(sheets):
+    instructions = """
+Print pages %d to %d (however many copies you need).
+Put them back in, rotated/flipped in order to print on the other side.
+Print pages %d to %d.
+""" % (1, len(sheets), len(sheets) + 1, len(sheets) * 2)
+    print instructions
+
+
 def make_booklet(input_name, output_name, blanks=0):
     reader = PdfFileReader(open(input_name, "rb"))
     pages = [reader.getPage(p) for p in range(0, reader.getNumPages())]
@@ -86,6 +95,7 @@ def make_booklet(input_name, output_name, blanks=0):
         add_double_page(writer, page_size, sheet.front)
 
     writer.write(open(output_name, "wb"))
+    print_instructions(sheets)
 
 
 USAGE = """
