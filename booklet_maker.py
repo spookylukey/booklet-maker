@@ -99,12 +99,12 @@ def make_booklet(input_name, output_name, blanks=0):
 
 
 USAGE = """
-Converts a PDF document into a booklet former, by re-ordering pages and
+Converts a PDF document into a booklet form, by re-ordering pages and
 combining into double sized pages suitable for double-sided printing.
 
 Usage:
 
-booklet_maker.py  input.pdf output.pdf [blank pages to insert at start]
+booklet_maker.py input.pdf output.pdf [blank pages to insert at start]
 """
 
 if __name__ == '__main__':
