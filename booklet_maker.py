@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import math
-import os
 import sys
 
 from PyPDF2 import PdfFileWriter, PdfFileReader
@@ -30,6 +29,13 @@ def build_booklet(pages):
     booklet = [Sheet() for i in range(0, sheet_count)]
 
     # Assign input pages to sheets
+
+    # This is the core algo. To understand it:
+    # * pick up 3 A4 sheets, landscape
+    # * number the sheets from 1 to 3, starting with bottom one
+    # * fold the stack in the middle to form an A5 booklet
+    # * work out what order you need to use the front left,
+    #   front right, back left and back right sides.
 
     def containers():
         # Yields parts of the booklet in the order they should be used.
