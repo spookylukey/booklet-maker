@@ -6,3 +6,5 @@ re-worked for a different type of document.
 No sizes are hardcoded, so it will work for other sizes.
 
 See script for usage instructions.
+
+Dependencies: PyPDF4
