@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import math
 import sys
 
-from PyPDF2 import PdfFileWriter, PdfFileReader
+from PyPDF4 import PdfFileWriter, PdfFileReader
 
 
 class Sheet(object):
@@ -74,7 +74,7 @@ Print pages %d to %d (however many copies you need).
 Put them back in, rotated/flipped in order to print on the other side.
 Print pages %d to %d.
 """ % (1, len(sheets), len(sheets) + 1, len(sheets) * 2)
-    print instructions
+    print(instructions)
 
 
 def make_booklet(input_name, output_name, blanks=0):
@@ -115,7 +115,7 @@ booklet_maker.py input.pdf output.pdf [blank pages to insert at start]
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
-        print USAGE
+        print(USAGE)
         sys.exit(1)
 
     if len(sys.argv) == 4:
